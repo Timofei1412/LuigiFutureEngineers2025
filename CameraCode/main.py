@@ -1,294 +1,439 @@
-import socket
-import time
-import keyboard
+from turtle import st
+# from unittest import skip
 import cv2
-import cv2.aruco as aruco
 import numpy as np
+from itertools import permutations
+import time
 
-esp_start = False
-cam = True
 
-if esp_start:
-    print("подключение esp")
-    ESP32_IP = "192.168.0.100"  # Замените на реальный IP
-    PORT = 1234
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect((ESP32_IP, PORT))
+cam = cv2.VideoCapture(3)
 
-flag = True
-flag1 = True
-flag2 = True
 
-colors = (0, 255, 0)
+SIZE_RECT = 15
 
-data_str = ""
+#stream = cv2.VideoCapture("rtsp://192.168.0.86:8554/live", cv2.CAP_ANY)
+#ret, frame = stream.read()
+#stream.release()
+# ret, frame = cam.read()
+frame = cv2.imread("Photo1.png")
 
-def key_connect():
-    global mot_left
-    global mot_right
-    global baraban
-    global sost
-    global flag
-    global flag1
-    global flag2
-    global speed_baraban
-    speed = 70
-    if keyboard.is_pressed('w') and not (keyboard.is_pressed('a') or keyboard.is_pressed('d')): # прямо
-        mot_left = speed
-        mot_right = speed
-    elif keyboard.is_pressed('a') and not keyboard.is_pressed('w'): # танк влево
-        mot_left = -speed
-        mot_right = speed
-    elif keyboard.is_pressed('d') and not keyboard.is_pressed('w'): # танк вправо
-        mot_left = speed
-        mot_right = -speed
-    elif keyboard.is_pressed('a') and keyboard.is_pressed('w'):  # одной влево
-        mot_left = 0
-        mot_right = speed
-    elif keyboard.is_pressed('d') and keyboard.is_pressed('w'):  # одной вправо
-        mot_left = speed
-        mot_right = 0
-    elif keyboard.is_pressed('s'):
-        mot_left = -speed
-        mot_right = -speed
-    else:
-        mot_left = 0
-        mot_right = 0
-    if keyboard.is_pressed('u'):
-        sost = max_otklon_serva
+width = 600
+height = 500
+dim = (width, height)
 
-    if keyboard.is_pressed('b') and flag:
-        flag = False
-    if not keyboard.is_pressed('b') and not flag:
-        flag = True
-        if baraban:
-            baraban = 0
+# resize image
+frame = cv2.resize(frame, dim, interpolation = cv2.INTER_AREA)
+
+
+src_points = np.float32([[141, 14], [460, 21],[132, 490] , [462, 490]])
+# # Destination points for the output image
+dst_points = np.float32([[0, 0], [500, 0], [0, 500], [500, 500]])
+# # Compute the perspective transform matrix
+matrix = cv2.getPerspectiveTransform(src_points, dst_points)
+# # Apply the perspective transformation to the image
+transformed_image = cv2.warpPerspective(frame, matrix, (500, 500))
+cv2.imshow("transform", transformed_image)
+
+imageHSV = cv2.cvtColor(transformed_image, cv2.COLOR_BGR2HSV)
+
+# transform_matrix = cv2.getPerspectiveTransform(corners_points, field_square)
+# transformed_frame = cv2.warpPerspective(frame, transform_matrix, (700, 700))
+
+# def rotate_image(image, angle):
+#   image_center = tuple(np.array(image.shape[1::-1]) / 2)
+#   rot_mat = cv2.getRotationMatrix2D(image_center, angle, 1.0)
+#   result = cv2.warpAffine(image, rot_mat, image.shape[1::-1], flags=cv2.INTER_LINEAR)
+#   return result
+
+def getBlobsCoords(tresholdImage):
+    
+    contours, _ = cv2.findContours(tresholdImage, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    
+    centers = []
+    
+    for contour in contours:
+        # Calculate contour moments
+        M = cv2.moments(contour)
+        
+        # Skip if the area is too small
+        if M['m00'] < 1:  # Adjust this threshold as needed
+            continue
+            
+        # Calculate centroid
+        if M['m00'] != 0:
+            cx = int(M['m10'] / M['m00'])
+            cy = int(M['m01'] / M['m00'])
         else:
-            baraban = speed_baraban
+            continue
+            
+        # Calculate circularity
+        area = cv2.contourArea(contour)
+        perimeter = cv2.arcLength(contour, True)
+        if perimeter > 0:
+            circularity = 4 * np.pi * area / (perimeter * perimeter)
+        else:
+            circularity = 0
+            
+        # Only accept circular shapes
+        if circularity > 0.2:  # Adjust this threshold as needed
+            centers.append((cx, cy))
+    
+    return centers
 
-    if keyboard.is_pressed('y') and flag1:
-        flag1 = False
-    if not keyboard.is_pressed('y') and not flag1:
-        flag1 = True
-        sost += 1
+def fill_edge_blobs(thresh, output_path=None):
+    height, width = thresh.shape
+    mask = np.zeros((height + 2, width + 2), dtype=np.uint8)
+    
+    # Set the edges of the mask to 1 (we'll flood fill from here)
+    mask[0, :] = 1          # Top edge
+    mask[-1, :] = 1         # Bottom edge
+    mask[:, 0] = 1          # Left edge
+    mask[:, -1] = 1         # Right edge
+    
+    # Create a copy of the threshold image where foreground is 1 and background is 0
+    binary = (thresh > 0).astype(np.uint8)
+    
+    # Flood fill from the edges to find all edge-connected blobs
+    # Note: We use a temporary mask that's properly sized
+    temp_mask = mask.copy()
+    cv2.floodFill(binary, temp_mask, (0, 0), 1, flags=4 | cv2.FLOODFILL_MASK_ONLY)
+    
+    # The mask now contains all edge-connected blobs (excluding the 2-pixel border)
+    edge_blobs_mask = (temp_mask[1:-1, 1:-1] == 1)
+    
+    # Create cleaned image by removing edge-connected blobs
+    cleaned = thresh.copy()
+    cleaned[edge_blobs_mask] = 0  # Set edge-connected blobs to background
+    
+    return cleaned
 
-    if keyboard.is_pressed('h') and flag2:
-        flag2 = False
-    if not keyboard.is_pressed('h') and not flag2:
-        flag2 = True
-        sost -= 1
+#------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------
 
-    if sost > max_otklon_serva:
-        sost = max_otklon_serva
-    elif sost < -max_otklon_serva:
-        sost = -max_otklon_serva
+def findBlue(image, hsvFrame):
+    B_low=np.array([98,50,50])
+    B_high=np.array([139,255,255]) 
 
-    if keyboard.is_pressed('1'):
-        speed_baraban = 25 * 1
-    if keyboard.is_pressed('2'):
-        speed_baraban = 25 * 2
-    if keyboard.is_pressed('3'):
-        speed_baraban = 25 * 3
-    if keyboard.is_pressed('4'):
-        speed_baraban = 25 * 4
-    if keyboard.is_pressed('5'):
-        speed_baraban = 25 * 5
-    if keyboard.is_pressed('6'):
-        speed_baraban = 25 * 6
-    if keyboard.is_pressed('7'):
-        speed_baraban = 25 * 7
-    if keyboard.is_pressed('8'):
-        speed_baraban = 25 * 8
-    if keyboard.is_pressed('9'):
-        speed_baraban = 25 * 9
-    if keyboard.is_pressed('0'):
-        speed_baraban = 255
-    print("клавиатура ")
+    b_mask=cv2.inRange(hsvFrame,B_low, B_high)
 
-def send():
-    global data_str
-    global mot_left
-    global mot_right
-    global baraban
-    global sost
-    data_str = str(mot_left) + ' ' + str(mot_right) + ' '
-    if baraban:
-        data_str += str(speed_baraban) + ' '
-    else:
-        data_str += str(baraban) + ' '
-    data_str += str(sost) + ' \n'
-    s.send(data_str.encode())
-    #print("отправил " + data_str)
+    blue=cv2.bitwise_and(image,image,mask=b_mask)
 
-def robot_is_destroy(destroy = False):
-    global mot_left
-    global mot_right
-    global baraban
-    global speed_baraban
-    global sost
-    if keyboard.is_pressed('q') or destroy:
-        mot_left = 0
-        mot_right = 0
-        baraban = 0
-        speed_baraban = 175
-        sost = 21
-        cap.release()
-        cv2.destroyAllWindows()
-        if esp_start:
-            send()
-            s.close()
-        exit(0)
+    kernel = np.ones((5, 5), np.uint8)
+    blue = cv2.erode(blue, kernel)
+    blue = cv2.dilate(blue, kernel)
 
-def detect_red_square():
-    # Загрузка изображения
-    image_path = "photo.jpg"  # Укажите свой путь
-    img = cv2.imread(image_path)
-    if img is None:
-        print("Не удалось загрузить изображение")
-        return
+    blueBGR = cv2.cvtColor(blue, cv2.COLOR_HSV2BGR)
+    blueGRAY = cv2.cvtColor(blueBGR, cv2.COLOR_BGR2GRAY)
+    ret, threshed = cv2.threshold(blueGRAY, 0, 255, cv2.THRESH_BINARY)
+    
+    centers = getBlobsCoords(threshed)
 
-    # Преобразование в HSV цветовое пространство
-    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    print("Blue")
+    for i in centers:
+        print(i)
+    print("--------------------------------------")
 
-    # Определение диапазонов красного цвета в HSV
-    lower_red1 = np.array([0, 100, 100])
-    upper_red1 = np.array([10, 255, 255])
-    lower_red2 = np.array([160, 100, 100])
-    upper_red2 = np.array([180, 255, 255])
+    cv2.imshow('Blue treshed Detector', threshed) 
+    return centers
 
-    # Создание масок для красного цвета
-    mask1 = cv2.inRange(hsv, lower_red1, upper_red1)
-    mask2 = cv2.inRange(hsv, lower_red2, upper_red2)
-    red_mask = cv2.bitwise_or(mask1, mask2)
+def findGreen(image, hsvFrame):
+    G_low=np.array([50,90,100]) # setting the blue lower limit
+    G_high=np.array([80 ,255,255]) # setting the blue upper limit
 
-    # Находим координаты всех красных пикселей
-    red_pixels = np.where(red_mask == 255)
-    if len(red_pixels[0]) == 0:
-        print("Красные пиксели не найдены")
-        return
+    g_mask=cv2.inRange(hsvFrame,G_low,G_high)
+    # creating the mask using inRange() function
+    # this will produce an image where the color of the objects
+    # falling in the range will turn white and rest will be black
+    green = cv2.bitwise_and(image,image,mask=g_mask)
+    kernel = np.ones((5, 5), np.uint8)
+    green = cv2.erode(green, kernel)
+    green = cv2.dilate(green, kernel)
 
-    # Преобразуем координаты в удобный формат
-    points = np.column_stack((red_pixels[1], red_pixels[0]))  # (x, y)
+    greenBGR = cv2.cvtColor(green, cv2.COLOR_HSV2BGR)
+    greenGRAY = cv2.cvtColor(greenBGR, cv2.COLOR_BGR2GRAY)
+    ret, threshed = cv2.threshold(greenGRAY, 0, 255, cv2.THRESH_BINARY)
+    
+    centers = getBlobsCoords(threshed)
 
-    # Находим крайние точки (углы квадрата)
-    if len(points) > 0:
-        # 1. Левый верхний угол (минимальная сумма x и y)
-        top_left = min(points, key=lambda p: p[0] + p[1])
+    print("Green")
+    for i in centers:
+        print(i)
+    print("--------------------------------------")
 
-        # 2. Правый верхний угол (максимальный x и минимальный y)
-        top_right = max(points, key=lambda p: p[0] - p[1])
+    cv2.imshow('Green Detector', threshed) # to display the blue object output
+    
+    return centers
 
-        # 3. Правый нижний угол (максимальная сумма x и y)
-        bottom_right = max(points, key=lambda p: p[0] + p[1])
+def findRed(image, hsvFrame):
+    R_low=np.array([0,60,50]) # setting the blue lower limit
 
-        # 4. Левый нижний угол (минимальный x и максимальный y)
-        bottom_left = min(points, key=lambda p: p[0] - p[1])
+    R_high=np.array([9,255,255]) # setting the blue upper limit
 
-        # Собираем углы квадрата
-        square_corners = np.array([top_left, top_right, bottom_right, bottom_left], dtype=np.int32)
 
-        # Рисуем квадрат
-        cv2.polylines(img, [square_corners], isClosed=True, color=(0, 255, 0), thickness=3)
+    R_low1=np.array([140,60,50]) # setting the blue lower limit
+    R_high1=np.array([179,255,255]) # setting the blue upper limit
 
-        # Рисуем углы
-        for i, corner in enumerate(square_corners):
-            cv2.circle(img, tuple(corner), 5, (0, 0, 255), -1)
-            cv2.putText(img, f"Corner {i + 1}", (corner[0] + 10, corner[1] + 10),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
+    r_mask = cv2.bitwise_or(cv2.inRange(hsvFrame,R_low,R_high), cv2.inRange(hsvFrame,R_low1,R_high1))
+    # r_mask = (cv2.inRange(hsvFrame,R_low1,R_high1))
+    # creating the mask using inRange() function
+    # this will produce an image where the color of the objects
+    # falling in the range will turn white and rest will be black
+    red = cv2.bitwise_and(image,image,mask=r_mask)
 
-        # Выводим координаты углов
-        print("Обнаруженные углы квадрата:")
-        print(f"1. Левый верхний: {top_left}")
-        print(f"2. Правый верхний: {top_right}")
-        print(f"3. Правый нижний: {bottom_right}")
-        print(f"4. Левый нижний: {bottom_left}")
+    kernel = np.ones((5, 5), np.uint8)
+    red = cv2.erode(red, kernel)
+    red = cv2.dilate(red, kernel)
 
-    # Отображение результата
-    cv2.imshow("Red Square Detection", img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    redBGR = cv2.cvtColor(red, cv2.COLOR_HSV2BGR)
+    redGRAY = cv2.cvtColor(redBGR, cv2.COLOR_BGR2GRAY)
+    ret, threshed = cv2.threshold(redGRAY, 0, 255, cv2.THRESH_BINARY)
+    # cutRed = fill_edge_blobs(threshed)
+    
+    centers = getBlobsCoords(threshed)
 
-    output_path = "output.jpg"
-    cv2.imwrite(output_path, img)
-    print(f"\nРезультат сохранен в {output_path}")
+    cv2.imshow('Threshed red', threshed) # to display the blue object output
+    # cv2.imshow('red Detector', cutRed) # to display the blue object output
+    print("Red")
+    for i in centers:
+        print(i)
+    print("--------------------------------------")
 
-def check_cam():
-    robot_is_destroy()
+    return centers
 
-    # ret, frame = cap.read()
-    # if not ret:
-    #     print("Не удалось считать кадр")
-    #     robot_is_destroy(True)
+def findRobot(image, hsvFrame):
+    O_low=np.array([9,100,120]) # setting the blue lower limit
+    O_high=np.array([21,255,255]) # setting the blue upper limit
 
-    image_path = "photo.jpg"  # Укажите свой путь
-    frame = cv2.imread(image_path)
+    o_mask=cv2.inRange(hsvFrame, O_low, O_high)
+    # creating the mask using inRange() function
+    # this will produce an image where the color of the objects
+    # falling in the range will turn white and rest will be black
+    orange = cv2.bitwise_and(image,image,mask=o_mask)
+    kernel = np.ones((5, 5), np.uint8)
+    orange = cv2.erode(orange, kernel)
+    orange = cv2.dilate(orange, kernel)
 
-    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)  # Преобразование цветного изображения в черно-белое
-    corners, ids, rejectedImgPoints = detector.detectMarkers(gray_frame)
-    height, width = frame.shape[:2]
-    center_x, center_y = width // 2, height // 2
+    orangeBGR = cv2.cvtColor(orange, cv2.COLOR_HSV2BGR)
+    orangeGRAY = cv2.cvtColor(orangeBGR, cv2.COLOR_BGR2GRAY)
+    ret, threshed = cv2.threshold(orangeGRAY, 0, 255, cv2.THRESH_BINARY)
+    
+    centers = getBlobsCoords(threshed)
 
-    if ids is not None:
-        aruco.drawDetectedMarkers(frame, corners, ids)
-        for i in range(len(ids)):
-            # Получаем координаты углов маркера
-            marker_corners = corners[i][0]  # Углы маркера в формате (x, y)
-            marker_id = ids[i][0]  # ID маркера
+    print("Orange")
+    for i in centers:
+        print(i)
+    print("--------------------------------------")
+    
+    cv2.imshow('Robot Detector', threshed) # to display the blue object output
+    
+    return centers
 
-            # Вычисляем центр маркера
-            marker_center_x = int(np.mean(marker_corners[:, 0]))  # Среднее по x-координатам углов
-            marker_center_y = int(np.mean(marker_corners[:, 1]))  # Среднее по y-координатам углов
+#------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------
 
-            # Вычисляем смещение маркера относительно центра кадра
-            offset_x = marker_center_x - center_x
-            offset_y = marker_center_y - center_y
+def count_points_in_square(points, square):
+    if isinstance(square, tuple) and len(square) == 4:
+        x_min, x_max, y_min, y_max = square
+    elif 'center' in square:
+        center_x, center_y = square['center']
+        half_side = square['side_length'] / 2
+        x_min = center_x - half_side
+        x_max = center_x + half_side
+        y_min = center_y - half_side
+        y_max = center_y + half_side
+    else:  # assume min/max format
+        x_min = square.get('x_min', square.get('left'))
+        x_max = square.get('x_max', square.get('right'))
+        y_min = square.get('y_min', square.get('bottom'))
+        y_max = square.get('y_max', square.get('top'))
+    
+    points_inside = []
+    for point in points:
+        x, y = point
+        if x_min <= x <= x_max and y_min <= y <= y_max:
+            points_inside.append(point)
+    
+    if not points_inside:
+        return None
+    if len(points_inside) == 1:
+        return points_inside[0]
+    
+    # Calculate average point
+    avg_x = sum(p[0] for p in points_inside) / len(points_inside)
+    avg_y = sum(p[1] for p in points_inside) / len(points_inside)
+    return (avg_x, avg_y)
 
-            # Вычисляем расстояние до маркера
-            marker_width = np.linalg.norm(marker_corners[0] - marker_corners[1])  # Длина верхней стороны маркера
-            distance = (marker_size * focal_length) / marker_width  # Расчет расстояния по формуле
+greenPostesLocal = []
+preGraph = []
+graph = [[None, None, None, None, None, None, None, None],
+         [None, None, None, None, None, None, None, None],
+         [None, None, None, None, None, None, None, None],
+         [None, None, None, None, None, None, None, None],
+         [None, None, None, None, None, None, None, None],
+         [None, None, None, None, None, None, None, None],
+         [None, None, None, None, None, None, None, None],
+         [None, None, None, None, None, None, None, None],
+        ]
 
-            vector_x = marker_corners[1][0] - marker_corners[0][0]
-            vector_y = marker_corners[1][1] - marker_corners[0][1]
-            angle = np.degrees(np.arctan2(vector_y, vector_x))
+def getLevels(image, hsvFrame):
+    black = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    ret, threshed = cv2.threshold(black, 120, 255, cv2.THRESH_BINARY)
+    
+    
+    blue = findBlue(image, hsvFrame)
+    green = findGreen(image, hsvFrame)
+    robot = findRobot(image, hsvFrame)
+    red = findRed(image, hsvFrame)
+    
+    cv2.line(image, (62 , 0), (61, 500), (0, 200, 200),  2)
+    cv2.line(image, (123, 0), (123, 500), (0, 200, 200), 2)
+    cv2.line(image, (187, 0), (187, 500), (0, 200, 200), 2)
+    cv2.line(image, (250, 0), (250, 500), (0, 200, 200), 2)
+    cv2.line(image, (312, 0), (312, 500), (0, 200, 200), 2)
+    cv2.line(image, (375, 0), (375, 500), (0, 200, 200), 2)
+    cv2.line(image, (440, 0), (440, 500), (0, 200, 200), 2)
 
-            # Отображение информации на изображении
-            cv2.putText(frame, f"ID: {marker_id}", (marker_center_x, marker_center_y - 20 * k_string),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5 * k_string, colors, 2 * k_string)
-            cv2.putText(frame, f"Offset: (X: {offset_x}, Y: {offset_y})", (marker_center_x, marker_center_y - 40 * k_string),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5 * k_string, colors, 2 * k_string)
-            cv2.putText(frame, f"Angle: {angle:.2f} deg", (marker_center_x, marker_center_y - 80 * k_string),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5 * k_string, colors, 2 * k_string)
+    cv2.line(image, (0, 62), (500, 62), (0, 200, 200),   2)
+    cv2.line(image, (0, 123), (500, 123), (0, 200, 200), 2)
+    cv2.line(image, (0, 187), (500, 187), (0, 200, 200), 2)
+    cv2.line(image, (0, 250), (500, 250), (0, 200, 200), 2)
+    cv2.line(image, (0, 312), (500, 312), (0, 200, 200), 2)
+    cv2.line(image, (0, 375), (500, 375), (0, 200, 200), 2)
+    cv2.line(image, (0, 440), (500, 440), (0, 200, 200), 2)
 
-            # Рисуем центр маркера и центр кадра
-            cv2.circle(frame, (marker_center_x, marker_center_y), 5, (0, 255, 0), -1)  # Центр маркера
-            # cv2.circle(frame, (center_x, center_y), 5, (255, 0, 0), -1)  # Центр кадра
+    for i in range(8):
+        for j in range(8):
+            middle = (30 + j * 63, 24 + i * 63)
+            xVal = 15 + j * 63
+            yVal = 12 + i * 63
+            height = 0 if threshed[yVal][xVal] > 100 else 1
 
-    # cv2.imshow('frame', frame)
-    # time.sleep(0.005)
-    # cv2.waitKey(1)
+            square1 = {'center': middle, 'side_length': 63}
+            reds = count_points_in_square(red, square1)
+            blues = count_points_in_square(blue, square1)
+            greens = count_points_in_square(green, square1)
+            robots = count_points_in_square(robot, square1)
 
-    output_path = "output.jpg"
-    cv2.imwrite(output_path, frame)
-    print(f"\nРезультат сохранен в {output_path}")
+            isAnRamp = 1 if (blues is not None) else 0
 
-if cam:
-    print("подключение камеры")
-    marker_size = 0.066
-    focal_length = 650
+            rampDirection = None
+            # find dx and dy and use that to calculate direction
+            if blues is not None:
+                dxRamp = abs(int(blues[0]) - middle[0])
+                dyRamp = abs(int(blues[1]) - middle[1])
 
-    dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_100)
-    parameters = cv2.aruco.DetectorParameters()
-    detector = cv2.aruco.ArucoDetector(dictionary, parameters)
+                if dxRamp < dyRamp:
+                    rampDirection = 'Horizontal'
+                else:
+                    rampDirection = 'Vertical'
+            
+            redPost = 0
+            redDirection = None
+            if blues is None and red is not None and robots is None:
+                redPost = 1
+                
 
-    cap = cv2.VideoCapture(0)
+            greenPost = 1 if greens is not None else 0
+            greenPostesLocal.append(greens)
+            # find dx and dy and use that to calculate direction
+            
+            robotPos = 1 if robots is not None else 0
+            robotDirection = "up"
 
-print("запуск")
-check_cam()
 
-def main():
-    detect_red_square()
+            preGraph.append((height, isAnRamp, rampDirection, greenPost, robotPos, redPost))
+            cv2.circle(image, (xVal, yVal), (7 if height else 3), (0, 150, 200), -1 if not isAnRamp else 2) 
+            if not greenPost:
+                cv2.circle(image, (xVal, yVal), (7 if height else 3), (0, 150, 200), -1 if not isAnRamp else 2) 
+            else:
+                cv2.rectangle(image, (xVal-4, yVal-4),(xVal+4, yVal+4), (0, 150, 200), -1 if not isAnRamp else 2) 
 
-    #robot_is_destroy(True)
+            # cv2.imshow("Levels", image)
+            # time.sleep(1)
+    
+    cv2.imshow("Levels", image)
+    cv2.imshow("TreshedL", threshed)
+    
+    for i in preGraph:
+        print(i)
 
-if __name__ == "__main__":
-    main()
+    for i in range(8):
+        for j in range(8):
+            data = preGraph[i * 8 + j]
+            listOfLines = []
+
+            dataleft = None
+            coordLeft = i * 8 + j - 1
+            if coordLeft >= 0 and coordLeft < 64:
+                dataleft = preGraph[coordLeft]
+
+            dataRight = None
+            coordRight = i * 8 + j + 1
+            if coordRight >= 0 and coordRight< 64:
+                dataRight = preGraph[coordRight]
+
+            dataUp = None
+            coordUp = (i - 1) * 8 + j
+            if coordUp >= 0 and coordUp < 64:
+                dataUp = preGraph[coordUp]
+
+            dataDown = None
+            coordUp = (i + 1) * 8 + j
+            if coordUp >= 0 and coordUp < 64:
+                dataDown = preGraph[coordUp]
+            
+            if dataleft is not None:
+                if dataleft[0] == data[0] or (dataleft[1] == 1 and dataleft[2] == "Horizontal") or (data[1] == 1 and data[2] == "Horizontal"): #if heights are the same
+                    listOfLines.append(((i, j - 1), 3 if dataleft[1] else 1))
+
+            if dataRight is not None:
+                if dataRight[0] == data[0] or (dataRight[1] == 1 and dataRight[2] == "Horizontal")  or (data[1] == 1 and data[2] == "Horizontal"): #if heights are the same
+                    listOfLines.append(((i, j + 1), 3 if dataRight[1] else 1))
+                    
+            if dataUp is not None:
+                if dataUp[0] == data[0] and (dataUp[1] == 1 and dataUp[2] == "Vertical")  or (data[1] == 1 and data[2] == "Vertical"): #if heights are the same
+                    listOfLines.append(((i - 1, j), 3 if dataUp[1] else 1))
+                    
+            if dataDown is not None:
+                if dataDown[0] == data[0] or (dataDown[1] == 1 and dataDown[2] == "Vertical")  or (data[1] == 1 and data[2] == "Vertical"): #if heights are the same
+                    listOfLines.append(((i + 1, j), 3 if dataDown[1] else 1))
+                    
+
+            graph[i][j] = listOfLines
+
+    for index, i in enumerate(graph):
+        for index2, j in enumerate(i):
+            print(index, "", index2," :", j)
+#------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------
+
+    # https://www.geeksforgeeks.org/dijkstras-algorithm-for-adjacency-list-representation-greedy-algo-8/
+
+#------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+# hsvFrame = cv2.cvtColor(frame, cv2.COLOR_BGR)
+# findBlue(transformed_image, imageHSV)
+# findGreen(transformed_image, imageHSV)
+# findRed(transformed_image, imageHSV)
+# findRobot(transformed_image, imageHSV)
+getLevels(transformed_image, imageHSV)
+# cv2.imshow("NAME", frame)
+# cv2.moveWindow(window_name, window_origin[0], window_origin[1])
+cv2.waitKey(0)
+cv2.destroyAllWindows()
