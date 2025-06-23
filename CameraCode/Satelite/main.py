@@ -1,9 +1,14 @@
 from turtle import st
+from collections import defaultdict
+
 # from unittest import skip
 import cv2
 import numpy as np
+import heapq
+
 from itertools import permutations
 import time
+import math
 
 
 cam = cv2.VideoCapture(3)
@@ -15,7 +20,7 @@ SIZE_RECT = 15
 #ret, frame = stream.read()
 #stream.release()
 # ret, frame = cam.read()
-frame = cv2.imread("Photo1.png")
+frame = cv2.imread("Photo.png")
 
 width = 600
 height = 500
@@ -73,39 +78,18 @@ def getBlobsCoords(tresholdImage):
             circularity = 4 * np.pi * area / (perimeter * perimeter)
         else:
             circularity = 0
+
+        x,y,w,h = cv2.boundingRect(contour)
+        # cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
             
+        # orientation =  "Horizontal" if () else "Vertical"
+        orientation = "Vertical" if  (w > h) else "Horizontal"
         # Only accept circular shapes
         if circularity > 0.2:  # Adjust this threshold as needed
-            centers.append((cx, cy))
-    
-    return centers
-
-def fill_edge_blobs(thresh, output_path=None):
-    height, width = thresh.shape
-    mask = np.zeros((height + 2, width + 2), dtype=np.uint8)
-    
-    # Set the edges of the mask to 1 (we'll flood fill from here)
-    mask[0, :] = 1          # Top edge
-    mask[-1, :] = 1         # Bottom edge
-    mask[:, 0] = 1          # Left edge
-    mask[:, -1] = 1         # Right edge
-    
-    # Create a copy of the threshold image where foreground is 1 and background is 0
-    binary = (thresh > 0).astype(np.uint8)
-    
-    # Flood fill from the edges to find all edge-connected blobs
-    # Note: We use a temporary mask that's properly sized
-    temp_mask = mask.copy()
-    cv2.floodFill(binary, temp_mask, (0, 0), 1, flags=4 | cv2.FLOODFILL_MASK_ONLY)
-    
-    # The mask now contains all edge-connected blobs (excluding the 2-pixel border)
-    edge_blobs_mask = (temp_mask[1:-1, 1:-1] == 1)
-    
-    # Create cleaned image by removing edge-connected blobs
-    cleaned = thresh.copy()
-    cleaned[edge_blobs_mask] = 0  # Set edge-connected blobs to background
-    
-    return cleaned
+            centers.append(((cx, cy), orientation))
+        # box = np.int0(box)
+        # print(math.acos(vy))        
+    return (centers)
 
 #------------------------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------------------------
@@ -132,7 +116,7 @@ def findBlue(image, hsvFrame):
 
     print("Blue")
     for i in centers:
-        print(i)
+        print(i[0])
     print("--------------------------------------")
 
     cv2.imshow('Blue treshed Detector', threshed) 
@@ -159,7 +143,7 @@ def findGreen(image, hsvFrame):
 
     print("Green")
     for i in centers:
-        print(i)
+        print(i[0])
     print("--------------------------------------")
 
     cv2.imshow('Green Detector', threshed) # to display the blue object output
@@ -253,7 +237,7 @@ def count_points_in_square(points, square):
     
     points_inside = []
     for point in points:
-        x, y = point
+        x, y = point[0]
         if x_min <= x <= x_max and y_min <= y <= y_max:
             points_inside.append(point)
     
@@ -263,12 +247,14 @@ def count_points_in_square(points, square):
         return points_inside[0]
     
     # Calculate average point
-    avg_x = sum(p[0] for p in points_inside) / len(points_inside)
-    avg_y = sum(p[1] for p in points_inside) / len(points_inside)
-    return (avg_x, avg_y)
+    avg_x = sum(p[0][0] for p in points_inside) / len(points_inside)
+    avg_y = sum(p[0][1] for p in points_inside) / len(points_inside)
+    return ((avg_x, avg_y), points_inside[0][1] if points_inside[0][1] is not None else None)
 
 greenPostesLocal = []
+redPostesLocal = []
 preGraph = []
+robotCoords = ()
 graph = [[None, None, None, None, None, None, None, None],
          [None, None, None, None, None, None, None, None],
          [None, None, None, None, None, None, None, None],
@@ -323,8 +309,8 @@ def getLevels(image, hsvFrame):
             rampDirection = None
             # find dx and dy and use that to calculate direction
             if blues is not None:
-                dxRamp = abs(int(blues[0]) - middle[0])
-                dyRamp = abs(int(blues[1]) - middle[1])
+                dxRamp = abs(int(blues[0][0]) - middle[0])
+                dyRamp = abs(int(blues[0][1]) - middle[1])
 
                 if dxRamp < dyRamp:
                     rampDirection = 'Horizontal'
@@ -333,9 +319,12 @@ def getLevels(image, hsvFrame):
             
             redPost = 0
             redDirection = None
-            if blues is None and red is not None and robots is None:
+            if blues is None and reds is not None and robots is None:
                 redPost = 1
-                
+                redDirection = reds[1]
+            
+            redPostesLocal.append((j, i))
+
 
             greenPost = 1 if greens is not None else 0
             greenPostesLocal.append(greens)
@@ -343,9 +332,13 @@ def getLevels(image, hsvFrame):
             
             robotPos = 1 if robots is not None else 0
             robotDirection = "up"
+            if robotPos:
+                print("ROBOT: ", j, i, " ----------------------------------------------------------")
+                global robotCoords 
+                robotCoords = (j, i)
 
 
-            preGraph.append((height, isAnRamp, rampDirection, greenPost, robotPos, redPost))
+            preGraph.append((height, isAnRamp, rampDirection, greenPost, robotPos, redPost, redDirection))
             cv2.circle(image, (xVal, yVal), (7 if height else 3), (0, 150, 200), -1 if not isAnRamp else 2) 
             if not greenPost:
                 cv2.circle(image, (xVal, yVal), (7 if height else 3), (0, 150, 200), -1 if not isAnRamp else 2) 
@@ -387,19 +380,19 @@ def getLevels(image, hsvFrame):
                 dataDown = preGraph[coordUp]
             
             if dataleft is not None:
-                if dataleft[0] == data[0] or (dataleft[1] == 1 and dataleft[2] == "Horizontal") or (data[1] == 1 and data[2] == "Horizontal"): #if heights are the same
+                if (dataleft[0] == data[0] and (dataleft[5] == 0 or (dataleft[5] == 1  and dataleft[6] == "Horizontal"))) or (dataleft[1] == 1 and dataleft[2] == "Horizontal") or (data[1] == 1 and data[2] == "Horizontal") : #if heights are the same
                     listOfLines.append(((i, j - 1), 3 if dataleft[1] else 1))
 
             if dataRight is not None:
-                if dataRight[0] == data[0] or (dataRight[1] == 1 and dataRight[2] == "Horizontal")  or (data[1] == 1 and data[2] == "Horizontal"): #if heights are the same
+                if (dataRight[0] == data[0] and (dataRight[5] == 0 or (dataRight[5] == 1  and dataRight[6] == "Horizontal"))) or (dataRight[1] == 1 and dataRight[2] == "Horizontal")  or (data[1] == 1 and data[2] == "Horizontal"): #if heights are the same
                     listOfLines.append(((i, j + 1), 3 if dataRight[1] else 1))
                     
             if dataUp is not None:
-                if dataUp[0] == data[0] and (dataUp[1] == 1 and dataUp[2] == "Vertical")  or (data[1] == 1 and data[2] == "Vertical"): #if heights are the same
+                if (dataUp[0] == data[0] and (dataUp[5] == 0 or (dataUp[5] == 1  and dataUp[6] == "Vertical"))) or (dataUp[1] == 1 and dataUp[2] == "Vertical")  or (data[1] == 1 and data[2] == "Vertical"): #if heights are the same
                     listOfLines.append(((i - 1, j), 3 if dataUp[1] else 1))
                     
             if dataDown is not None:
-                if dataDown[0] == data[0] or (dataDown[1] == 1 and dataDown[2] == "Vertical")  or (data[1] == 1 and data[2] == "Vertical"): #if heights are the same
+                if (dataDown[0] == data[0] and (dataDown[5] == 0 or (dataDown[5] == 1  and dataDown[6] == "Vertical"))) or (dataDown[1] == 1 and dataDown[2] == "Vertical")  or (data[1] == 1 and data[2] == "Vertical"): #if heights are the same
                     listOfLines.append(((i + 1, j), 3 if dataDown[1] else 1))
                     
 
@@ -414,7 +407,73 @@ def getLevels(image, hsvFrame):
 #------------------------------------------------------------------------------------------------------------------------------------------
 
     # https://www.geeksforgeeks.org/dijkstras-algorithm-for-adjacency-list-representation-greedy-algo-8/
+    
 
+def dijkstra(graph, start):
+    # Initialize distances with infinity for all nodes except start
+    rows = len(graph)
+    cols = len(graph[0]) if rows > 0 else 0
+    distances = {(i, j): float('infinity') for i in range(rows) for j in range(cols)}
+    distances[start] = 0
+    
+    # Priority queue: (distance, x, y)
+    priority_queue = [(0, start[0], start[1])]
+    
+    # To keep track of visited nodes
+    visited = set()
+    
+    # To reconstruct paths
+    previous = {}
+    
+    while priority_queue:
+        current_dist, x, y = heapq.heappop(priority_queue)
+        current_node = (x, y)
+        
+        # Skip if we've already found a better path
+        if current_dist > distances[current_node]:
+            continue
+            
+        visited.add(current_node)
+        
+        # Explore neighbors
+        for neighbor, weight in graph[x][y]:
+            if neighbor not in distances:  # Skip if neighbor is out of bounds
+                continue
+                
+            distance = current_dist + weight
+            
+            # Only consider this new path if it's better
+            if distance < distances[neighbor]:
+                distances[neighbor] = distance
+                previous[neighbor] = current_node
+                heapq.heappush(priority_queue, (distance, neighbor[0], neighbor[1]))
+    
+    return distances, previous
+
+def reconstruct_path(previous, start, end):
+    """
+    Reconstruct the shortest path from start to end using the previous dict.
+    
+    Args:
+        previous: Dictionary from dijkstra's algorithm
+        start: Starting coordinates (x, y)
+        end: Destination coordinates (x, y)
+    
+    Returns:
+        List of coordinates representing the path from start to end
+    """
+    path = []
+    current = end
+    
+    while current != start:
+        path.append(current)
+        if current not in previous:  # No path exists
+            return None
+        current = previous[current]
+    
+    path.append(start)
+    path.reverse()
+    return path
 #------------------------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------------------------
@@ -433,6 +492,16 @@ def getLevels(image, hsvFrame):
 # findRed(transformed_image, imageHSV)
 # findRobot(transformed_image, imageHSV)
 getLevels(transformed_image, imageHSV)
+print(robotCoords)
+
+distances, previous = dijkstra(graph, robotCoords)
+
+end = redPostesLocal[0]
+path = reconstruct_path(previous, robotCoords, end)
+
+print(path)
+
+
 # cv2.imshow("NAME", frame)
 # cv2.moveWindow(window_name, window_origin[0], window_origin[1])
 cv2.waitKey(0)

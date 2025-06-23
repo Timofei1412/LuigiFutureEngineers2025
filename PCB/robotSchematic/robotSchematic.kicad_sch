@@ -1,0 +1,7461 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "c801716e-5e70-460d-9797-965e64e2892b")
+	(paper "A3")
+	(title_block
+		(date "23.06.2025")
+	)
+	(lib_symbols
+		(symbol "Battery_Cell_1"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "BT1"
+				(at 3.556 3.1116 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Value" "Battery_Cell"
+				(at 3.556 0.5716 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 1.524 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 1.524 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Single-cell battery"
+				(at 10.5 -0.75 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "battery cell"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Battery_Cell_1_0_1"
+				(rectangle
+					(start -2.286 1.778)
+					(end 2.286 1.524)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -2.25 0)
+					(end 2.322 -0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -2.25 -1.75)
+					(end 2.322 -2.004)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -1.524 1.016)
+					(end 1.524 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -1.488 -0.762)
+					(end 1.56 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -1.488 -2.512)
+					(end 1.56 -3.02)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.778) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.75) (xy 0 -0.012)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1) (xy 0 -1.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.869) (xy 0 -3.631)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 3.048) (xy 1.778 3.048)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 3.556) (xy 1.27 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Battery_Cell_1_1_1"
+				(pin passive line
+					(at 0 5.08 270)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -6 90)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "CONN_UART_1"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "X2"
+				(at -0.254 102.362 0)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "Value" "CONN_2"
+				(at -218.948 -38.608 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+						(thickness 0.4013)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "Connector_Samtec_HLE_SMD:Samtec_HLE-120-02-xxx-DV-BE-A_2x20_P2.54mm_Horizontal"
+				(at -219.71 -42.418 0)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+						(thickness 0.4013)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 13.462 -106.426 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+						(thickness 0.4013)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 5.334 4.318 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.254)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "PIN3" "RX"
+				(at 0 83.566 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN4" "+5V"
+				(at -45.212 48.26 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "PIN5" "TX"
+				(at 0 78.486 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN6" "GND"
+				(at -219.964 136.652 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN7" "GPIO 4 (GPCLK0)"
+				(at -219.964 131.572 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN8" "GPIO 14 (TXD)"
+				(at -219.964 126.746 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN9" "GND"
+				(at -219.964 121.666 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN10" "GPIO 15 (RXD)"
+				(at -220.472 116.586 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN11" "GPIO 17"
+				(at -219.964 111.506 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN12" "GPIO 18 (PCM_CLK)"
+				(at -219.964 106.68 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN13" "GPIO 27"
+				(at -219.964 101.6 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN14" "GND"
+				(at -219.964 96.52 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN15" "GPIO 22"
+				(at -219.964 91.694 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN16" "GPIO 23"
+				(at -219.964 86.614 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN17" "+3.3V"
+				(at -219.964 81.534 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN2" "GND"
+				(at 0 88.646 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN1" "+5V"
+				(at 0 93.472 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN18" "GPIO 24"
+				(at -219.964 76.454 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN19" "GPIO 10 (MOSI)"
+				(at -219.964 71.628 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN20" "GND"
+				(at -219.964 66.548 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN21" "GPIO 9 (MISO)"
+				(at -219.964 61.722 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN22" "GPIO 25"
+				(at -219.964 56.642 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN23" "GPIO 11 (SCLK)"
+				(at -219.964 51.562 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN24" "GPIO 8 (CE0)"
+				(at -219.964 46.736 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN25" "GND"
+				(at -219.964 41.656 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN26" "GPIO 7 (CE1)"
+				(at -219.964 36.576 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN27" "GPIO 0 (ID_SDA0)"
+				(at -220.472 31.496 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN28" "GPIO 1 (ID_SCL0)"
+				(at -220.218 26.67 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN29" "GPIO 5"
+				(at -220.218 21.59 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN30" "GND"
+				(at -219.964 16.51 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN31" "GPIO 6"
+				(at -219.964 11.684 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN32" "GPIO 12 (PWM0)"
+				(at -220.472 6.604 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN33" "GPIO 13 (PWM1)"
+				(at -219.964 1.524 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN34" "GND"
+				(at -219.964 -3.556 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN35" "GPIO 19 (PCM_FS)"
+				(at -220.472 -8.382 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN36" "GPIO 16"
+				(at -219.964 -13.462 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN37" "GPIO 26"
+				(at -219.71 -18.288 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN38" "GPIO 20 (PCM_DIN)"
+				(at -220.472 -23.368 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN39" "GND"
+				(at -219.964 -28.448 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN40" "GPIO 21 (PCM_DOUT)"
+				(at -220.472 -33.528 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "CONN_UART_1_0_0"
+				(rectangle
+					(start -17 101)
+					(end 25 76)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -17 96) (xy 25 96)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -17 91) (xy 25 91)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -17 86) (xy 25 86)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -17 81) (xy 25 81)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 15 101) (xy 15 86)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "CONN_UART_1_0_1"
+				(polyline
+					(pts
+						(xy 15 86) (xy 15 81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 15 81) (xy 15 76)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "CONN_UART_1_1_1"
+				(text "Цепь"
+					(at 0 98.552 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(text "Конт.\n"
+					(at 20.066 98.552 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(text "1"
+					(at 20.066 93.472 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(text "2"
+					(at 20.066 88.392 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(text "3\n"
+					(at 20.066 83.566 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(text "4\n"
+					(at 20.066 78.486 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(pin power_in line
+					(at 30 93.5 180)
+					(length 5)
+					(name "1"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 30 88.5 180)
+					(length 5)
+					(name "2"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 30 83.5 180)
+					(length 5)
+					(name "SCL"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 30 78.5 180)
+					(length 5)
+					(name "SCL"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "HAT+:ATmega328P"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U3"
+				(at 0.5 1 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "~"
+				(at 18 0.635 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "ATmega328P_0_1"
+				(polyline
+					(pts
+						(xy 0 -8) (xy 12 -8) (xy 12 -32)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -32) (xy 12 -32)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.5 -16) (xy 0 -16) (xy 12 -16)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 12 -8) (xy 12 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 24 0) (xy 24 -32)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 35.5 0) (xy 36 0) (xy 24 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 36 -16) (xy 24 -16)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 36 -16) (xy 24 -16)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 36 -32) (xy 24 -32)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "ATmega328P_1_1"
+				(rectangle
+					(start 0 0)
+					(end 36 -32)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type color)
+						(color 255 255 194 1)
+					)
+				)
+				(text "DEV\n"
+					(at 15.5 -2 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5 -2 0)
+					(length 5)
+					(name "+5V"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5 -5.5 0)
+					(length 5)
+					(name "GND"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5 -10.5 0)
+					(length 5)
+					(name "TX"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5 -14 0)
+					(length 5)
+					(name "RX"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5 -18.5 0)
+					(length 5)
+					(name "32"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5 -22 0)
+					(length 5)
+					(name "33"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5 -25.5 0)
+					(length 5)
+					(name "16"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5 -29 0)
+					(length 5)
+					(name "4"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 41 -2.5 180)
+					(length 5)
+					(name "17"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 41 -6 180)
+					(length 5)
+					(name "5"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 41 -9.5 180)
+					(length 5)
+					(name "19"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 41 -13 180)
+					(length 5)
+					(name "18"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 41 -18.5 180)
+					(length 5)
+					(name "25"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 41 -22 180)
+					(length 5)
+					(name "13"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 41 -25.5 180)
+					(length 5)
+					(name "27"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 41 -29 180)
+					(length 5)
+					(name "14"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "HAT+:CONN_I2C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "X2"
+				(at -0.254 102.362 0)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "Value" "CONN_2"
+				(at -218.948 -38.608 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+						(thickness 0.4013)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "Connector_Samtec_HLE_SMD:Samtec_HLE-120-02-xxx-DV-BE-A_2x20_P2.54mm_Horizontal"
+				(at -219.71 -42.418 0)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+						(thickness 0.4013)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 13.462 -106.426 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+						(thickness 0.4013)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 5.334 4.318 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.254)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "PIN3" "SCL"
+				(at 0 83.566 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN4" "+5V"
+				(at -45.212 48.26 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "PIN5" "SDA"
+				(at 0 78.486 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "PIN6" "GND"
+				(at -219.964 136.652 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN7" "GPIO 4 (GPCLK0)"
+				(at -219.964 131.572 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN8" "GPIO 14 (TXD)"
+				(at -219.964 126.746 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN9" "GND"
+				(at -219.964 121.666 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN10" "GPIO 15 (RXD)"
+				(at -220.472 116.586 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN11" "GPIO 17"
+				(at -219.964 111.506 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN12" "GPIO 18 (PCM_CLK)"
+				(at -219.964 106.68 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN13" "GPIO 27"
+				(at -219.964 101.6 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN14" "GND"
+				(at -219.964 96.52 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN15" "GPIO 22"
+				(at -219.964 91.694 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN16" "GPIO 23"
+				(at -219.964 86.614 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN17" "+3.3V"
+				(at -219.964 81.534 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN2" "GND"
+				(at 0 88.646 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN1" "+5V"
+				(at 0 93.472 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN18" "GPIO 24"
+				(at -219.964 76.454 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN19" "GPIO 10 (MOSI)"
+				(at -219.964 71.628 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN20" "GND"
+				(at -219.964 66.548 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN21" "GPIO 9 (MISO)"
+				(at -219.964 61.722 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN22" "GPIO 25"
+				(at -219.964 56.642 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN23" "GPIO 11 (SCLK)"
+				(at -219.964 51.562 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN24" "GPIO 8 (CE0)"
+				(at -219.964 46.736 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN25" "GND"
+				(at -219.964 41.656 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN26" "GPIO 7 (CE1)"
+				(at -219.964 36.576 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN27" "GPIO 0 (ID_SDA0)"
+				(at -220.472 31.496 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN28" "GPIO 1 (ID_SCL0)"
+				(at -220.218 26.67 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN29" "GPIO 5"
+				(at -220.218 21.59 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN30" "GND"
+				(at -219.964 16.51 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN31" "GPIO 6"
+				(at -219.964 11.684 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN32" "GPIO 12 (PWM0)"
+				(at -220.472 6.604 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN33" "GPIO 13 (PWM1)"
+				(at -219.964 1.524 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN34" "GND"
+				(at -219.964 -3.556 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN35" "GPIO 19 (PCM_FS)"
+				(at -220.472 -8.382 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN36" "GPIO 16"
+				(at -219.964 -13.462 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN37" "GPIO 26"
+				(at -219.71 -18.288 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN38" "GPIO 20 (PCM_DIN)"
+				(at -220.472 -23.368 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN39" "GND"
+				(at -219.964 -28.448 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN40" "GPIO 21 (PCM_DOUT)"
+				(at -220.472 -33.528 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "CONN_I2C_0_0"
+				(rectangle
+					(start -17 101)
+					(end 25 81)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -17 96) (xy 25 96)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -17 91) (xy 25 91)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -17 86) (xy 25 86)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -17 81) (xy 25 81)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 15 101) (xy 15 86)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "CONN_I2C_0_1"
+				(polyline
+					(pts
+						(xy 15 86) (xy 15 81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "CONN_I2C_1_1"
+				(text "Цепь"
+					(at 0 98.552 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(text "Конт.\n"
+					(at 20.066 98.552 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(text "1"
+					(at 20.066 93.472 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(text "2"
+					(at 20.066 88.392 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(text "3\n"
+					(at 20.066 83.566 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(pin power_in line
+					(at 30 93.5 180)
+					(length 5)
+					(name "1"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 30 88.5 180)
+					(length 5)
+					(name "2"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 30 83.5 180)
+					(length 5)
+					(name "SCL"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "HAT+:CONN_UART"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "X2"
+				(at -0.254 102.362 0)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "Value" "CONN_2"
+				(at -218.948 -38.608 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+						(thickness 0.4013)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "Connector_Samtec_HLE_SMD:Samtec_HLE-120-02-xxx-DV-BE-A_2x20_P2.54mm_Horizontal"
+				(at -219.71 -42.418 0)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+						(thickness 0.4013)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 13.462 -106.426 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+						(thickness 0.4013)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 5.334 4.318 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.254)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "PIN3" "RX"
+				(at 0 83.566 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN4" "+5V"
+				(at -45.212 48.26 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "PIN5" "TX"
+				(at 0 78.486 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN6" "GND"
+				(at -219.964 136.652 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN7" "GPIO 4 (GPCLK0)"
+				(at -219.964 131.572 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN8" "GPIO 14 (TXD)"
+				(at -219.964 126.746 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN9" "GND"
+				(at -219.964 121.666 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN10" "GPIO 15 (RXD)"
+				(at -220.472 116.586 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN11" "GPIO 17"
+				(at -219.964 111.506 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN12" "GPIO 18 (PCM_CLK)"
+				(at -219.964 106.68 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN13" "GPIO 27"
+				(at -219.964 101.6 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN14" "GND"
+				(at -219.964 96.52 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN15" "GPIO 22"
+				(at -219.964 91.694 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN16" "GPIO 23"
+				(at -219.964 86.614 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN17" "+3.3V"
+				(at -219.964 81.534 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN2" "GND"
+				(at 0 88.646 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN1" "+5V"
+				(at 0 93.472 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN18" "GPIO 24"
+				(at -219.964 76.454 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN19" "GPIO 10 (MOSI)"
+				(at -219.964 71.628 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN20" "GND"
+				(at -219.964 66.548 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN21" "GPIO 9 (MISO)"
+				(at -219.964 61.722 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN22" "GPIO 25"
+				(at -219.964 56.642 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN23" "GPIO 11 (SCLK)"
+				(at -219.964 51.562 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN24" "GPIO 8 (CE0)"
+				(at -219.964 46.736 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN25" "GND"
+				(at -219.964 41.656 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN26" "GPIO 7 (CE1)"
+				(at -219.964 36.576 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN27" "GPIO 0 (ID_SDA0)"
+				(at -220.472 31.496 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN28" "GPIO 1 (ID_SCL0)"
+				(at -220.218 26.67 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN29" "GPIO 5"
+				(at -220.218 21.59 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN30" "GND"
+				(at -219.964 16.51 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN31" "GPIO 6"
+				(at -219.964 11.684 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN32" "GPIO 12 (PWM0)"
+				(at -220.472 6.604 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN33" "GPIO 13 (PWM1)"
+				(at -219.964 1.524 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN34" "GND"
+				(at -219.964 -3.556 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN35" "GPIO 19 (PCM_FS)"
+				(at -220.472 -8.382 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN36" "GPIO 16"
+				(at -219.964 -13.462 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN37" "GPIO 26"
+				(at -219.71 -18.288 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN38" "GPIO 20 (PCM_DIN)"
+				(at -220.472 -23.368 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN39" "GND"
+				(at -219.964 -28.448 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "PIN40" "GPIO 21 (PCM_DOUT)"
+				(at -220.472 -33.528 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(face "GOST type B")
+						(size 2.5 2.5)
+						(thickness 0.4013)
+						(bold yes)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "CONN_UART_0_0"
+				(rectangle
+					(start -17 101)
+					(end 25 76)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -17 96) (xy 25 96)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -17 91) (xy 25 91)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -17 86) (xy 25 86)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -17 81) (xy 25 81)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 15 101) (xy 15 86)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "CONN_UART_0_1"
+				(polyline
+					(pts
+						(xy 15 86) (xy 15 81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 15 81) (xy 15 76)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "CONN_UART_1_1"
+				(text "Цепь"
+					(at 0 98.552 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(text "Конт.\n"
+					(at 20.066 98.552 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(text "1"
+					(at 20.066 93.472 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(text "2"
+					(at 20.066 88.392 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(text "3\n"
+					(at 20.066 83.566 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(text "4\n"
+					(at 20.066 78.486 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(pin power_in line
+					(at 30 93.5 180)
+					(length 5)
+					(name "1"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 30 88.5 180)
+					(length 5)
+					(name "2"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 30 83.5 180)
+					(length 5)
+					(name "SCL"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 30 78.5 180)
+					(length 5)
+					(name "SCL"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "HAT+:CP"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 2.5 2.5)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "CP"
+				(at 0.635 -3.175 0)
+				(effects
+					(font
+						(size 2.5 2.5)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.905 0 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Capacitor_*:CP_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "CP_0_1"
+				(polyline
+					(pts
+						(xy -3.9878 0.762) (xy 3.9878 0.762)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.9878 -0.762) (xy 3.9878 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.0828 3.7592) (xy -2.0828 1.7272)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.0668 2.6924) (xy -3.0988 2.6924)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "CP_1_1"
+				(pin passive line
+					(at 0 5 270)
+					(length 4.2)
+					(name "~"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5 90)
+					(length 4.2)
+					(name "~"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "HAT+:DRV8833"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0.5 0.75 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "DRV8833_0_1"
+				(polyline
+					(pts
+						(xy 0 -8.25) (xy 12 -8.25) (xy 12 -23.5)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 12 -8.25) (xy 12 -0.25)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 36 -23.5) (xy 25 -23.5) (xy 25 -0.25)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "DRV8833_1_1"
+				(rectangle
+					(start 0 -0.25)
+					(end 36 -23.5)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type color)
+						(color 255 255 194 1)
+					)
+				)
+				(text "DEV\n"
+					(at 15.5 -2.25 0)
+					(effects
+						(font
+							(face "GOST type B")
+							(size 2.5 2.5)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5 -2.25 0)
+					(length 5)
+					(name "VCC"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5 -5.75 0)
+					(length 5)
+					(name "GND"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5 -10.75 0)
+					(length 5)
+					(name "IN1"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5 -14.25 0)
+					(length 5)
+					(name "IN2"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5 -17.5 0)
+					(length 5)
+					(name "IN3"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5 -21 0)
+					(length 5)
+					(name "IN4"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 41 -7.25 180)
+					(length 5)
+					(name "OUT1"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 41 -10.25 180)
+					(length 5)
+					(name "OUT2"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 41 -13.5 180)
+					(length 5)
+					(name "OUT3"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 41 -16.5 180)
+					(length 5)
+					(name "OUT4"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "HAT+:Mini560"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U?"
+				(at -12.192 7.62 0)
+				(effects
+					(font
+						(size 2.5 2.5)
+					)
+				)
+			)
+			(property "Value" "Mini560"
+				(at 8.636 7.874 0)
+				(effects
+					(font
+						(size 2.5 2.5)
+					)
+				)
+			)
+			(property "Footprint" "Package_SO:SOP-16_4.55x10.3mm_P1.27mm"
+				(at 0.254 -38.862 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 -40.132 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at -12.29 -4.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Mini560_0_1"
+				(polyline
+					(pts
+						(xy -6 6) (xy -6 -6)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5 6) (xy 5 -6)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Mini560_1_1"
+				(rectangle
+					(start -14 6)
+					(end 14 -6)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(text "X/Y\n"
+					(at -0.508 3.556 0)
+					(effects
+						(font
+							(size 2.5 2.5)
+							(thickness 0.25)
+							(bold yes)
+						)
+					)
+				)
+				(pin power_in non_logic
+					(at -19 2 0)
+					(length 5)
+					(name "IN+"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin power_in non_logic
+					(at -19 -2 0)
+					(length 5)
+					(name "IN-"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin power_in non_logic
+					(at 19 2 180)
+					(length 5)
+					(name "OUT-"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin power_in non_logic
+					(at 19 -2 180)
+					(length 5)
+					(name "OUT+"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "HAT+:SA_SPST_NO"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SA"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+				)
+			)
+			(property "Value" "SA_SPST_NO"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+					(hide yes)
+				)
+			)
+			(property "Footprint" ""
+				(at -2.54 2.54 0)
+				(effects
+					(font
+						(size 2.4892 2.4892)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 2.4892 2.4892)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SW_*_SPST*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SA_SPST_NO_0_1"
+				(polyline
+					(pts
+						(xy -2.9972 0) (xy 2.9972 3.4544)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SA_SPST_NO_1_1"
+				(pin bidirectional line
+					(at -8 0 0)
+					(length 5)
+					(name "INA1"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 8 0 180)
+					(length 5)
+					(name "INA1"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "HAT+:Servo"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "A"
+				(at -11.176 12.446 0)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Value" "Servo"
+				(at 8.636 13.208 0)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+					(hide yes)
+				)
+			)
+			(property "Footprint" ""
+				(at -5.08 27.94 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at -2.54 30.48 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 5.5 0.5 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Servo_0_1"
+				(rectangle
+					(start -12 12)
+					(end 12 -12)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3 0) (xy -3 5) (xy 0 5) (xy 0 3.5) (xy -1.5 3.5) (xy -1.5 0)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3 0) (xy -3 -5) (xy 0 -5) (xy 0 -3.5) (xy -1.5 -3.5) (xy -1.5 0)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.5 4.5) (xy 4.5 7.5) (xy 6.5 7.5) (xy 6.4812 4.5)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.5 7.5) (xy 5.5 8.5)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 5.5 0)
+					(radius 4.5277)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.5 -7.5) (xy 5.5 -7.5)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.5 -7.5) (xy 5.5 -8.5)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.5 -4.5) (xy 6.5 -7.5) (xy 4.5 -7.5) (xy 4.5 -4.5)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Servo_1_0"
+				(pin bidirectional line
+					(at -17 5 0)
+					(length 5)
+					(name "VCC"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -17 0 0)
+					(length 5)
+					(name "PWM"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -17 -5 0)
+					(length 5)
+					(name "GND"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Motor:Motor_DC"
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "M"
+				(at 2.54 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Motor_DC"
+				(at 2.54 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 -2.286 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 -2.286 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "DC Motor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "DC Motor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "PinHeader*P2.54mm* TerminalBlock*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Motor_DC_0_0"
+				(polyline
+					(pts
+						(xy -1.27 -3.302) (xy -1.27 0.508) (xy 0 -2.032) (xy 1.27 0.508) (xy 1.27 -3.302)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Motor_DC_0_1"
+				(polyline
+					(pts
+						(xy 0 2.032) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.7272) (xy 0 2.0828)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 -1.524)
+					(radius 3.2512)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -4.7752) (xy 0 -5.1816)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -7.62) (xy 0 -7.112)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Motor_DC_1_1"
+				(pin passive line
+					(at 0 5.08 270)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:DRV8833")
+		(at 254.635 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "07366a35-a328-4a14-9aca-a71eb782a809")
+		(property "Reference" "U4"
+			(at 272.635 113.538 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 272.635 114.808 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 254.635 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 254.635 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 254.635 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin ""
+			(uuid "f96ce622-605c-4b5e-9071-70ee87430380")
+		)
+		(pin ""
+			(uuid "9ce9a3f0-9da5-4cf0-a067-3a1d5e80c43a")
+		)
+		(pin ""
+			(uuid "78524d45-2213-472c-b080-27a65ddffef2")
+		)
+		(pin ""
+			(uuid "85acf8d3-f53d-491d-b749-3888b9263261")
+		)
+		(pin ""
+			(uuid "1ace290c-3100-491a-aa3f-0d79962f0bbc")
+		)
+		(pin ""
+			(uuid "c6896960-5081-4e4f-ba03-3bc54a2da522")
+		)
+		(pin ""
+			(uuid "8519cebf-28f8-43b1-b089-014c1e5d0906")
+		)
+		(pin ""
+			(uuid "9dc12326-977e-49aa-b9c0-20b916aeb459")
+		)
+		(pin ""
+			(uuid "c13aeefe-d082-4967-bb48-e4fe09d2c016")
+		)
+		(pin ""
+			(uuid "384bb1c3-dd86-40fe-bb27-7661f3e2694a")
+		)
+		(instances
+			(project ""
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:Motor_DC")
+		(at 321.311 118.364 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1db54339-3484-4bc8-8dc8-29ce346c75ea")
+		(property "Reference" "M1"
+			(at 326.137 119.6339 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Motor_DC"
+			(at 326.137 122.1739 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 321.311 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 321.311 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "DC Motor"
+			(at 321.311 118.364 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7fdd93b6-2fbb-4c0d-a07d-10a5cc989560")
+		)
+		(pin "2"
+			(uuid "1df2983d-52c6-4d0b-a290-0a00ac3967d7")
+		)
+		(instances
+			(project ""
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "M1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:CP")
+		(at 124.41 59.785 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1ff5dd36-503a-49a5-bc64-ca7b4f64e455")
+		(property "Reference" "C5"
+			(at 129.49 56.4003 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CP"
+			(at 129.49 60.2103 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 122.505 59.785 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 125.045 57.245 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 124.41 59.785 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ee133802-d10c-46d5-ab09-02fb5f0581b1")
+		)
+		(pin "2"
+			(uuid "65a4e72a-6489-4b5f-bc97-8185862aaf21")
+		)
+		(instances
+			(project "robotSchematic"
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "Battery_Cell_1")
+		(lib_id "Device:Battery_Cell")
+		(at 31.496 46.355 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "34eeeadb-a04d-411d-802f-b7850f016ae5")
+		(property "Reference" "BT1"
+			(at 35.052 43.2434 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "Battery_Cell"
+			(at 35.052 45.7834 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 31.496 44.831 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 31.496 44.831 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Single-cell battery"
+			(at 41.996 47.105 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "110e44b8-8db0-4bae-ba8b-5b07d696f08f")
+		)
+		(pin "1"
+			(uuid "194bcd29-6444-4c66-b57d-ee30e7b7d625")
+		)
+		(instances
+			(project ""
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "BT1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:CP")
+		(at 124.029 38.322 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3618b97c-13cd-4709-aa13-04f16a1849ca")
+		(property "Reference" "C2"
+			(at 129.109 34.9373 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CP"
+			(at 129.109 38.7473 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 122.124 38.322 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.664 35.782 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 124.029 38.322 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6ea2e31c-8b05-4a1f-8152-df8131374f1e")
+		)
+		(pin "2"
+			(uuid "52f9d27f-91ad-41aa-a6d2-c2671462a445")
+		)
+		(instances
+			(project "robotSchematic"
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "CONN_UART_1")
+		(lib_id "HAT+:CONN_UART")
+		(at 58.011 280.952 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3b6e9be3-75f9-4d0b-b1e7-9d2f7abadcfb")
+		(property "Reference" "X2"
+			(at 62.011 177.447 0)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+			)
+		)
+		(property "Value" "CONN_2"
+			(at -160.937 319.56 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Samtec_HLE_SMD:Samtec_HLE-120-02-xxx-DV-BE-A_2x20_P2.54mm_Horizontal"
+			(at -161.699 323.37 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 71.473 387.378 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 63.345 276.634 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.254)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN3" "16"
+			(at 58.011 197.386 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+			)
+		)
+		(property "PIN4" "+5V"
+			(at 12.799 232.692 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN5" "4"
+			(at 58.011 202.466 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+			)
+		)
+		(property "PIN6" "GND"
+			(at -161.953 144.3 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN7" "GPIO 4 (GPCLK0)"
+			(at -161.953 149.38 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN8" "GPIO 14 (TXD)"
+			(at -161.953 154.206 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN9" "GND"
+			(at -161.953 159.286 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN10" "GPIO 15 (RXD)"
+			(at -162.461 164.366 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN11" "GPIO 17"
+			(at -161.953 169.446 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN12" "GPIO 18 (PCM_CLK)"
+			(at -161.953 174.272 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN13" "GPIO 27"
+			(at -161.953 179.352 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN14" "GND"
+			(at -161.953 184.432 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN15" "GPIO 22"
+			(at -161.953 189.258 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN16" "GPIO 23"
+			(at -161.953 194.338 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN17" "+3.3V"
+			(at -161.953 199.418 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN2" "GND"
+			(at 58.011 192.306 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+			)
+		)
+		(property "PIN1" "+5V"
+			(at 58.011 187.48 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+			)
+		)
+		(property "PIN18" "GPIO 24"
+			(at -161.953 204.498 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN19" "GPIO 10 (MOSI)"
+			(at -161.953 209.324 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN20" "GND"
+			(at -161.953 214.404 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN21" "GPIO 9 (MISO)"
+			(at -161.953 219.23 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN22" "GPIO 25"
+			(at -161.953 224.31 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN23" "GPIO 11 (SCLK)"
+			(at -161.953 229.39 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN24" "GPIO 8 (CE0)"
+			(at -161.953 234.216 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN25" "GND"
+			(at -161.953 239.296 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN26" "GPIO 7 (CE1)"
+			(at -161.953 244.376 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN27" "GPIO 0 (ID_SDA0)"
+			(at -162.461 249.456 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN28" "GPIO 1 (ID_SCL0)"
+			(at -162.207 254.282 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN29" "GPIO 5"
+			(at -162.207 259.362 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN30" "GND"
+			(at -161.953 264.442 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN31" "GPIO 6"
+			(at -161.953 269.268 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN32" "GPIO 12 (PWM0)"
+			(at -162.461 274.348 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN33" "GPIO 13 (PWM1)"
+			(at -161.953 279.428 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN34" "GND"
+			(at -161.953 284.508 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN35" "GPIO 19 (PCM_FS)"
+			(at -162.461 289.334 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN36" "GPIO 16"
+			(at -161.953 294.414 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN37" "GPIO 26"
+			(at -161.699 299.24 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN38" "GPIO 20 (PCM_DIN)"
+			(at -162.461 304.32 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN39" "GND"
+			(at -161.953 309.4 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN40" "GPIO 21 (PCM_DOUT)"
+			(at -162.461 314.48 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6cca6fe8-850f-4fa9-9a8d-cb2a8c01732f")
+		)
+		(pin "1"
+			(uuid "a2a476ba-1937-4006-87ff-ae2badefbb5e")
+		)
+		(pin ""
+			(uuid "778854ff-f581-4c1e-b68c-dfa96848b9cd")
+		)
+		(pin ""
+			(uuid "84aa2e03-ca5a-48aa-a7bd-4183671fa563")
+		)
+		(instances
+			(project "robotSchematic"
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "X2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:CP")
+		(at 95.835 37.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "55d9a3aa-f27f-40e5-a4f7-a7114eadac4d")
+		(property "Reference" "C7"
+			(at 100.915 34.1753 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CP"
+			(at 100.915 37.9853 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 93.93 37.56 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 96.47 35.02 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 95.835 37.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b5a35143-05a6-4cdb-b951-c8a11f7932d9")
+		)
+		(pin "2"
+			(uuid "bfb2790e-cc79-4378-ae65-69c118ac29f8")
+		)
+		(instances
+			(project ""
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:Servo")
+		(at 216.941 195.992 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6b481b79-4318-4990-ab92-a1d532f30a17")
+		(property "Reference" "A4"
+			(at 216.941 210.597 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Value" "Servo"
+			(at 230.149 204.628 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 244.881 190.912 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 247.421 193.452 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 217.441 201.492 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "ff74bd1a-fd88-437b-9472-e8c7e1425d27")
+		)
+		(pin "1"
+			(uuid "8bd1541a-c46b-4fcd-a7eb-bb8232e5952c")
+		)
+		(pin "2"
+			(uuid "996c4c25-b5d3-4663-ac6e-414cbea92f74")
+		)
+		(instances
+			(project "robotSchematic"
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "A4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:Mini560")
+		(at 69.8 37.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "760002a9-e2b5-46ef-b357-63172a7905ac")
+		(property "Reference" "U1"
+			(at 69.8 24.86 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+			)
+		)
+		(property "Value" "Mini560"
+			(at 69.8 28.67 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SOP-16_4.55x10.3mm_P1.27mm"
+			(at 70.054 76.422 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 69.8 77.692 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 57.51 42.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "562ab569-1cb4-44b3-95be-d59bb5ed8b83")
+		)
+		(pin "4"
+			(uuid "7af8bf06-7cfb-418d-986d-c337d19a9f3c")
+		)
+		(pin "3"
+			(uuid "1d9fcb53-540a-4813-a919-401eae2fb30a")
+		)
+		(pin "1"
+			(uuid "f89229b1-e6be-417a-8711-c6bdb0cdcd19")
+		)
+		(instances
+			(project ""
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:ATmega328P")
+		(at 154.1217 111.156 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "83e44686-32bf-4010-9fd0-7c17c8a89785")
+		(property "Reference" "U3"
+			(at 154.6217 110.156 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 172.1217 110.521 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 154.1217 111.156 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 154.1217 111.156 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 154.1217 111.156 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin ""
+			(uuid "1678e771-17e2-4731-8fef-8465f971bcbb")
+		)
+		(pin ""
+			(uuid "7b68a1b0-786f-4f16-b9cc-50558596892f")
+		)
+		(pin ""
+			(uuid "efed5263-26b6-4e8d-8bb6-413831031d29")
+		)
+		(pin ""
+			(uuid "2456c2b2-5991-4dfc-908c-5a8ad19dcd49")
+		)
+		(pin ""
+			(uuid "13cde7b2-e986-46d2-986a-388de8d6c86b")
+		)
+		(pin ""
+			(uuid "a2f9d84e-bcae-47ba-b175-e16dac51c74b")
+		)
+		(pin ""
+			(uuid "c685afbc-f870-4798-994f-d762b73d7dcc")
+		)
+		(pin ""
+			(uuid "cc716e6a-0aab-4c87-9817-66c95c4f9083")
+		)
+		(pin ""
+			(uuid "d74977a4-2279-407f-8f1c-5bcfc24b63c1")
+		)
+		(pin ""
+			(uuid "e74ac804-f98e-4324-83b1-7bd30aef7138")
+		)
+		(pin ""
+			(uuid "944b3a44-037c-478f-80a1-41e26f1df42e")
+		)
+		(pin ""
+			(uuid "bb87c5d8-9052-4ac1-b42e-6ac8744fb398")
+		)
+		(pin ""
+			(uuid "fd7fdb4a-1192-461a-9db7-e6659c035a90")
+		)
+		(pin ""
+			(uuid "640f5d9d-1115-4788-a9c7-d9c6d4a1c5cd")
+		)
+		(pin ""
+			(uuid "2f5074de-3b01-4726-a38f-a487a41b2bad")
+		)
+		(pin ""
+			(uuid "db7b64c1-f800-489c-bcb4-c8022d7673da")
+		)
+		(instances
+			(project ""
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:SA_SPST_NO")
+		(at 64.515 143.51 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "902e5627-2695-48af-b3b9-2b2da286df3f")
+		(property "Reference" "SA1"
+			(at 64.515 136.525 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Value" "SA_SPST_NO"
+			(at 64.515 146.05 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 61.975 140.97 0)
+			(effects
+				(font
+					(size 2.4892 2.4892)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 64.515 138.43 0)
+			(effects
+				(font
+					(size 2.4892 2.4892)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 64.515 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fa2bdc14-be78-4847-a473-cdfacd495831")
+		)
+		(pin "2"
+			(uuid "0c8a7a14-cd63-4066-82b2-a4e4121b92fb")
+		)
+		(instances
+			(project ""
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "SA1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:CONN_UART")
+		(at 56.768 206.756 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "92a80b90-1b9d-44df-a1c9-f329bc09bd3c")
+		(property "Reference" "X1"
+			(at 60.768 103.251 0)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+			)
+		)
+		(property "Value" "CONN_2"
+			(at -162.18 245.364 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Samtec_HLE_SMD:Samtec_HLE-120-02-xxx-DV-BE-A_2x20_P2.54mm_Horizontal"
+			(at -162.942 249.174 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 70.23 313.182 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 62.102 202.438 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.254)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN3" "RX"
+			(at 56.768 123.19 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+			)
+		)
+		(property "PIN4" "+5V"
+			(at 11.556 158.496 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN5" "TX"
+			(at 56.768 128.27 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+			)
+		)
+		(property "PIN6" "GND"
+			(at -163.196 70.104 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN7" "GPIO 4 (GPCLK0)"
+			(at -163.196 75.184 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN8" "GPIO 14 (TXD)"
+			(at -163.196 80.01 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN9" "GND"
+			(at -163.196 85.09 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN10" "GPIO 15 (RXD)"
+			(at -163.704 90.17 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN11" "GPIO 17"
+			(at -163.196 95.25 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN12" "GPIO 18 (PCM_CLK)"
+			(at -163.196 100.076 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN13" "GPIO 27"
+			(at -163.196 105.156 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN14" "GND"
+			(at -163.196 110.236 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN15" "GPIO 22"
+			(at -163.196 115.062 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN16" "GPIO 23"
+			(at -163.196 120.142 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN17" "+3.3V"
+			(at -163.196 125.222 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN2" "GND"
+			(at 56.768 118.11 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+			)
+		)
+		(property "PIN1" "+5V"
+			(at 56.768 113.284 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+			)
+		)
+		(property "PIN18" "GPIO 24"
+			(at -163.196 130.302 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN19" "GPIO 10 (MOSI)"
+			(at -163.196 135.128 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN20" "GND"
+			(at -163.196 140.208 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN21" "GPIO 9 (MISO)"
+			(at -163.196 145.034 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN22" "GPIO 25"
+			(at -163.196 150.114 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN23" "GPIO 11 (SCLK)"
+			(at -163.196 155.194 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN24" "GPIO 8 (CE0)"
+			(at -163.196 160.02 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN25" "GND"
+			(at -163.196 165.1 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN26" "GPIO 7 (CE1)"
+			(at -163.196 170.18 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN27" "GPIO 0 (ID_SDA0)"
+			(at -163.704 175.26 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN28" "GPIO 1 (ID_SCL0)"
+			(at -163.45 180.086 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN29" "GPIO 5"
+			(at -163.45 185.166 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN30" "GND"
+			(at -163.196 190.246 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN31" "GPIO 6"
+			(at -163.196 195.072 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN32" "GPIO 12 (PWM0)"
+			(at -163.704 200.152 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN33" "GPIO 13 (PWM1)"
+			(at -163.196 205.232 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN34" "GND"
+			(at -163.196 210.312 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN35" "GPIO 19 (PCM_FS)"
+			(at -163.704 215.138 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN36" "GPIO 16"
+			(at -163.196 220.218 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN37" "GPIO 26"
+			(at -162.942 225.044 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN38" "GPIO 20 (PCM_DIN)"
+			(at -163.704 230.124 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN39" "GND"
+			(at -163.196 235.204 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN40" "GPIO 21 (PCM_DOUT)"
+			(at -163.704 240.284 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "601d60fa-6986-438e-9709-6f6599c63a58")
+		)
+		(pin "1"
+			(uuid "361da3c4-73da-479f-aa36-f38c7555f540")
+		)
+		(pin ""
+			(uuid "9038c74a-da8a-4c8e-9f03-6f79cba6f2cf")
+		)
+		(pin ""
+			(uuid "b015ac29-3601-47eb-afb5-e4c1d37dc298")
+		)
+		(instances
+			(project ""
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "X1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:CONN_I2C")
+		(at 57.63 254.79 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a1ad2336-3203-4817-80f3-bf228d149cc7")
+		(property "Reference" "X3"
+			(at 61.63 151.412 0)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+			)
+		)
+		(property "Value" "CONN_2"
+			(at -161.318 293.398 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Samtec_HLE_SMD:Samtec_HLE-120-02-xxx-DV-BE-A_2x20_P2.54mm_Horizontal"
+			(at -162.08 297.208 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 71.092 361.216 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 62.964 250.472 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.254)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN3" "33"
+			(at 57.63 171.224 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+			)
+		)
+		(property "PIN4" "+5V"
+			(at 12.418 206.53 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN5" "SDA"
+			(at 57.63 176.304 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN6" "GND"
+			(at -162.334 118.138 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN7" "GPIO 4 (GPCLK0)"
+			(at -162.334 123.218 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN8" "GPIO 14 (TXD)"
+			(at -162.334 128.044 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN9" "GND"
+			(at -162.334 133.124 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN10" "GPIO 15 (RXD)"
+			(at -162.842 138.204 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN11" "GPIO 17"
+			(at -162.334 143.284 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN12" "GPIO 18 (PCM_CLK)"
+			(at -162.334 148.11 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN13" "GPIO 27"
+			(at -162.334 153.19 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN14" "GND"
+			(at -162.334 158.27 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN15" "GPIO 22"
+			(at -162.334 163.096 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN16" "GPIO 23"
+			(at -162.334 168.176 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN17" "+3.3V"
+			(at -162.334 173.256 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN2" "GND"
+			(at 57.63 166.144 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+			)
+		)
+		(property "PIN1" "+5V"
+			(at 57.63 161.318 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+			)
+		)
+		(property "PIN18" "GPIO 24"
+			(at -162.334 178.336 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN19" "GPIO 10 (MOSI)"
+			(at -162.334 183.162 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN20" "GND"
+			(at -162.334 188.242 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN21" "GPIO 9 (MISO)"
+			(at -162.334 193.068 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN22" "GPIO 25"
+			(at -162.334 198.148 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN23" "GPIO 11 (SCLK)"
+			(at -162.334 203.228 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN24" "GPIO 8 (CE0)"
+			(at -162.334 208.054 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN25" "GND"
+			(at -162.334 213.134 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN26" "GPIO 7 (CE1)"
+			(at -162.334 218.214 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN27" "GPIO 0 (ID_SDA0)"
+			(at -162.842 223.294 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN28" "GPIO 1 (ID_SCL0)"
+			(at -162.588 228.12 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN29" "GPIO 5"
+			(at -162.588 233.2 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN30" "GND"
+			(at -162.334 238.28 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN31" "GPIO 6"
+			(at -162.334 243.106 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN32" "GPIO 12 (PWM0)"
+			(at -162.842 248.186 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN33" "GPIO 13 (PWM1)"
+			(at -162.334 253.266 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN34" "GND"
+			(at -162.334 258.346 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN35" "GPIO 19 (PCM_FS)"
+			(at -162.842 263.172 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN36" "GPIO 16"
+			(at -162.334 268.252 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN37" "GPIO 26"
+			(at -162.08 273.078 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN38" "GPIO 20 (PCM_DIN)"
+			(at -162.842 278.158 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN39" "GND"
+			(at -162.334 283.238 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "PIN40" "GPIO 21 (PCM_DOUT)"
+			(at -162.842 288.318 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(face "GOST type B")
+					(size 2.5 2.5)
+					(thickness 0.4013)
+					(bold yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3ab8379a-2f36-4eae-a240-acda3f184591")
+		)
+		(pin ""
+			(uuid "580cd057-6cbe-4fca-86cf-f5ccdc53ee37")
+		)
+		(pin "2"
+			(uuid "0948e6e0-1541-4a63-912b-8f7d45126eb1")
+		)
+		(instances
+			(project ""
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "X3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:Servo")
+		(at 270.9841 195.8155 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a739af51-9879-41eb-86c8-3880d4e386e8")
+		(property "Reference" "A2"
+			(at 270.9842 209.1505 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Servo"
+			(at 284.1921 204.4515 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 298.9241 190.7355 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 301.4641 193.2755 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 271.4841 201.3155 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "ff124116-644f-41bb-acee-bc2ac11dbea9")
+		)
+		(pin "1"
+			(uuid "048084d4-6fa4-40b1-b9dc-24bf8fba5d16")
+		)
+		(pin "2"
+			(uuid "9d2d6816-04cb-4137-a2bb-1ae5298def1c")
+		)
+		(instances
+			(project "robotSchematic"
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "A2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:CP")
+		(at 110.44 59.785 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "aaaff7e6-2356-4c33-9415-f8b6f3675584")
+		(property "Reference" "C4"
+			(at 115.52 56.4003 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CP"
+			(at 115.52 60.2103 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 108.535 59.785 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 111.075 57.245 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 110.44 59.785 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8eb9b14b-1bba-4fc6-9904-08f5e9b701c6")
+		)
+		(pin "2"
+			(uuid "685e6511-c507-4bea-ae6b-9f80c50c7d2a")
+		)
+		(instances
+			(project "robotSchematic"
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:Motor_DC")
+		(at 321.057 134.493 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b867e984-9495-4ded-944c-f638df84193a")
+		(property "Reference" "M2"
+			(at 325.883 135.7629 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Motor_DC"
+			(at 325.883 138.3029 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 321.057 136.779 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 321.057 136.779 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "DC Motor"
+			(at 321.057 134.493 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d114c1db-c022-459a-a8d4-80663a4cc2a3")
+		)
+		(pin "2"
+			(uuid "b7819482-9520-45ad-900e-4e43ddf653be")
+		)
+		(instances
+			(project "robotSchematic"
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "M2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:CP")
+		(at 109.805 37.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d58adba9-4187-46e9-9292-8d5b16bb3a23")
+		(property "Reference" "C1"
+			(at 114.885 34.1753 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CP"
+			(at 114.885 37.9853 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 107.9 37.56 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 110.44 35.02 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 109.805 37.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "532ea03e-5329-45f0-9725-dc0af3fcce3a")
+		)
+		(pin "2"
+			(uuid "8b519c38-abae-4d38-949f-39428291ea74")
+		)
+		(instances
+			(project "robotSchematic"
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:Servo")
+		(at 297.8781 195.7445 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d691b915-ce2e-46e5-bdaf-828f4f656209")
+		(property "Reference" "A1"
+			(at 297.8782 209.0795 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Servo"
+			(at 311.0861 204.3805 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 325.8181 190.6645 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 328.3581 193.2045 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 298.3781 201.2445 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "13de3843-23f0-4a00-aa34-2183decf1ea3")
+		)
+		(pin "1"
+			(uuid "50cd4130-1d84-4412-b208-8d9d62e81bbf")
+		)
+		(pin "2"
+			(uuid "11390fff-d7e2-45a3-b10a-85132e81a552")
+		)
+		(instances
+			(project ""
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "A1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:Servo")
+		(at 244.0391 196.1415 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dda744fd-5828-4385-a730-2bbc9cf3a63b")
+		(property "Reference" "A3"
+			(at 244.0391 210.7465 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Value" "Servo"
+			(at 257.2471 204.7775 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 271.9791 191.0615 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 274.5191 193.6015 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 244.5391 201.6415 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "72197f6e-a494-49d5-901b-9c9536086c3b")
+		)
+		(pin "1"
+			(uuid "d472c36e-11f9-4fe2-aeb6-b3e01ba7f849")
+		)
+		(pin "2"
+			(uuid "d189c9de-9602-483a-bc67-0c9deeccca4e")
+		)
+		(instances
+			(project "robotSchematic"
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "A3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:CP")
+		(at 96.47 59.785 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f4140b29-7f26-4c2e-9e0e-ac5dc2717e0c")
+		(property "Reference" "C3"
+			(at 101.55 56.4003 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CP"
+			(at 101.55 60.2103 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 94.565 59.785 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 97.105 57.245 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 96.47 59.785 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7b746a02-1f52-49d9-8287-dae1cf2c275c")
+		)
+		(pin "2"
+			(uuid "43c8aa2c-1568-42b9-8811-0866da7d47ce")
+		)
+		(instances
+			(project "robotSchematic"
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HAT+:Mini560")
+		(at 70.435 59.785 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f9a268a3-5b55-46cc-9a3a-5f2bb4589d3b")
+		(property "Reference" "U2"
+			(at 70.435 47.085 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+			)
+		)
+		(property "Value" "Mini560"
+			(at 70.435 50.895 0)
+			(effects
+				(font
+					(size 2.5 2.5)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SOP-16_4.55x10.3mm_P1.27mm"
+			(at 70.689 98.647 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 70.435 99.917 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 58.145 64.595 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "62c46195-0e1b-4f0c-9067-710ab5ce3161")
+		)
+		(pin "4"
+			(uuid "6a11cb67-b361-448c-bdaf-a055fa840258")
+		)
+		(pin "3"
+			(uuid "7750bd74-782e-4b40-9d79-145c27cec4bf")
+		)
+		(pin "1"
+			(uuid "3982623e-d00f-4b52-b1df-b450eb581caa")
+		)
+		(instances
+			(project "robotSchematic"
+				(path "/c801716e-5e70-460d-9797-965e64e2892b"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+	(embedded_files
+		(file
+			(name "gost_landscape.kicad_wks")
+			(type worksheet)
+			(data |KLUv/WDlKfUrAIaukjMQldpUNfbyk3QAFOA/CYGg2vFwiju7JRVCjL1lGgMTsSFwCEEru3tnaVy6
+				sM0IAID/vQGKAHcAiADcFhtrV/VOGyYIeOp0VxR7DRv2BHe9y3mdSQLVsN8bexpegbDpOgg4qG9K
+				47DpeqkO405C1eFZcdo829x28rRUCVPcF0UMdgWe2DQut6FEE/u+G9sKsy4OeTwfFQa+K4hZUAm0
+				TdwSSgVqr8Oad7l7Cnk+Iuvu8eE3120r72aEPJ/VhUZpQjNtF6FfTc7JMfm1swBqzLpYAtfqDqVn
+				MdrqE0prG8aPXIc7Dk73SL0hjJCOYrXfMIvRVurzp/RvOGP1UYw/+ugPP7OR1jmpxzhdQtnTylij
+				pT+lxwgdztkwezulN6xOZx11K5PybYyzWd9CcZ3fk6bCqk46bpr9/G55pvYlh0yMVv945ZMa+6nr
+				50v3njFW/+qdSXd9HyYT+1FDh24D4/HRZJ2S9yxGp2bWJr/E5Dox2txFsbSUWzqTSea7zK7vlUdg
+				1hdruPNqRwwm42Sa/MozWSS/dzF3Td2i2PAKwwKCoK+qRWrSA8MBqK9J83ww11FgH3tidHqvOhVm
+				XZKAg7CbDBIfUaTVf7p8KOPE/Cv17KF1jOraVdoM1p41c+8pG1LqpAUDBelW1p4/IxYGGhQYCv77
+				VtQYp5UGCSQEkpzxva0DAHAEyNjhYNAw0MAR0Dc52SVzfS32WTKv/1qp1OObUfmfKZis0WN9f+kf
+				k5tGJ2U+xMky+SbT6OT2+GRyisw8PteHU5MxlCyBfKhBRahoRCQFSUHSZjEVIYw4yc7mgmAYgjAM
+				glAQBVIwBiKOCIgjRkgEhBBCFBERTB6vSE+NYAesT7EGY1VwyKmMPyLuY1ptPTMt5V65RxmjJi3C
+				MDfcVQnUKAQ2EAibDgrn0THlKSw9CwWhFqJ64FIVx1L1edpsipGCCbQhY4awO6cjleKQ2hMp0P0r
+				28mUKMbSH+hr07NLNdq9UvDG8RXJ0FFV+5ko8tfsU5h0wXVN6dUsvXfCyo0ZBiodNCUpl2bdSjLw
+				67OumIQ6HRyIjVyagaD0Gq7r6u00AO8rY9EUQcihd/UiQJiIK/P59MIeB8xoNrJcHIdPtJSYmM+B
+				GXIw3g8RlkKRyx+85hzY5Mricp2OSH4Wb0qM4Sf5u7FcOjX+i+T0D4izkHhknq3venKBeXQObFxd
+				XQgg8a72rKN/pwv8ufAwD0v+0/eT2wtBa/66dULW6henZAjzWRuGxiT/U6YVjPjh0oPhgb6NzZv3
+				W9jKqzKPVV+53mupAsTqcDxMRt1klW7lYzDgqUCx3ovmuA7kQv9+EGdUm3I19DNoqliw3Di6pgIf
+				6e+sB2qftHAuC7Oi2y1jJ2WvEX2jTn1dicOCvmffR/7cBNntHz0rt+HfnfBudYUpKe0fjdGKBt3l
+				Eyxp9ZhdnGSwZImgqbqGXN6fQBhUHbirLJO3VjNkAQKtYsKe/tVDE0qmgMXf+bsgLrqmZGuTG/nA
+				rhCbetcQ1TYGW0WK0AgLzrAIrz3hEziFBsHCEY/WwIVsaASyPoCbixcAI/M6CggPhKOkOOz101sM
+				Fxa8092Ij7iUHiam/UP31ihlNbqw2FSMd7PGPidkDSHKY7LxOXB/JFmUZ8b4wC0SxFIG7iFTyxrZ
+				LIzgWq7jiQf4c/bVi1Rd4Jlha0B/C3C7wQhFHBWynsItiMgOKggZJb8leJp6kVliXR3boExBN5rC
+				ta56Ds1X2ePW7HzD6fP2b+hvuMp5yU/oWwmCE1FpBnjFlqguxL4qvuoJVEEkyT1TFpdRa3yA+4xZ
+				NB6i6qK7/uKjOnzMG+HQIl27zCDWm6pBJcCHPSqRGVM/EWn7Et89Hv3ujHAiZnZV|
+			)
+			(checksum "2A43DBCB352A38B286AD5440E5455B0B")
+		)
+		(file
+			(name "gost_portrait.kicad_wks")
+			(type worksheet)
+			(data |KLUv/WDjKu0rAObukzIwdTqKBJ01AreMna5ZQIIRX5RGyWvabjEEYaGdXhoG0Iuz4LeUUsqUSr/j
+				a08aSgGqBI0AdACLAF1pQz1bra68Jb8FgladKkvajh8/Nm21q1vHlSpS/NibbadZlsiWKgRBi7iq
+				tM2WaqfirOUqVpyNFydUR3lDnTpNRWEtqo8ee3xhTSiOuqFSo4g5Vw8Uy7aqFQCBQisNW1kPoyIK
+				EcpUKVIrEXec1bq61ZMAKDSi3f3+nDcOxerqhgAoxMrgoDBpJVSGQNf10yBi26q2ws7Z/WBn/3R2
+				fJBSfu+/cZbbXux+2fzePznwkzq/7J/OB2VHj7CdX/zZ//78OcL21nue0ZczRtn/seGDHCn8+VR6
+				hP3/+vGLkZ9nTiNsflPGOcCt+Q3nm//RO1Ib1/WkreyKsx1DyrA9OncErrsyn12OeHTYzfF/ts/m
+				DPbIS0QlYj7Ar5/OdV2akBfO9Unxzmp8ZkZ17kzNnRGTvNVUS1M1lSjRG96Rl+uevIyr1SzXTX6M
+				5vJcnOu6N9fkelftVkvcYYGyLA0MU4qr4JHIgOuqwzIpwiFBxLWkgUJ24ywwf46YjM0sbmVblUTQ
+				Imznkrxybs+tCaHRy9keG/qDH7H2Kd12kzbkN7PXHKVsUgMCA2wKJ0ePEw0FDwwOB+5cL+Z/lCBR
+				iLBAUiDB+N5MGwDgIwA+CATCQ8HDRwDv9FyZbOQVQx0m6+mulylDXjfXdV3cYwuc3z8dttdcxvFp
+				if54rs3duTg+l0NeNrcFZljIa+TFk3MxlozO3JKIydkiAYF3qEFRiGZEkoKkkjYDQRUhijCr7BwD
+				goAUgjAIg1AMxHEsBTEUERBFjJAICCECwwQik3IHwHbNXYBAtD52uLsC2p0ycSTkQJzzEajKp9K2
+				SAK9aaqBMZxMFEcyLJFOJYXLoy4fpr9aKpN5r+L0tzqz+zU64A2xp3Lb4fVxqqLeUyo1nIK4B7OD
+				vKlU3XkOlFIpEcF2UHipGYMRwh1bSVt40cTEQc3D4rS9yu+JQ1YH6iLkWsVeTNtCKqaCfFNo5YqV
+				eewTGawJ92nN+ZvVTwZWECBER3Mm0N1M5K+JA0GcaMLAPlAO8UV0pkYoIH40LqYweUC+JefenwhI
+				VP8zfgIP6bWQ8amaaa+HMXces+t/zIeCM8hnXUILQ24TUtRPGE/xOaBIEXmhOLIimwlfE/5EmgYz
+				X5MIx1M8JbymmNixodw8+rpAXIvj6o9kqOhsL5BjC6oe8iG+BrFtyQTRklz4yC9iAfNuNa7UNOKA
+				JHx4nSPxCQJMcdp8X9iteDWvg41pnAdajWWWKPGhwWbwVNv3E2SlxkBLk+KDBsCbpjoiT944wsWh
+				1AFgwROO02Wn2CkZpgROoNkGSq9LU9LpK5UYePoy4PeLEc9vfWAHB94O1oH6N4j7APwTIlZZrZBF
+				ikkCMbLc4LD4BP2aHrCWmwzwJBE0X6nZiOVnqQDKvPNqM2Ff9TQuBXE18sNeRfWqhJJBzUIibFwQ
+				7zko7XKpbz64xInNUTUgLACDA8L5UYGCif3vDnyBUz3Y/VCPFsCFPvoJqGCgAi42hpVGvx0CLZ1d
+				Lu7sTQ5AXO7M82YvPNDiFBAe+wBIlPt0idlUgNvPTB/Asuq9cm5trAB0mxrZyAYijl434SyVrXvn
+				0L6Xd8iv1lApan/gksfXhokyzH+Bg/m8TAk/+yHsjEtd65reXmynTRzwS9h5ihamGhsUa2NbDdtg
+				x5+4XrU/FFuYJ3GPPbguQRdJvbXcios/cMZNiL25+hwAvMpWxK8qAUVQ4OQ+09SXHRtgJrisFR0c
+				CkTgUPTSpsrOoMPDv6W9dsk4xX/92BrCRLMP0ste9Q+9dW/+3avXf8aeMOI8UgU=|
+			)
+			(checksum "E8349CA6CFB6C78FCD11DE0290B59F01")
+		)
+	)
+)
