@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name "New_Library")(type "KiCad")(uri "${KIPRJMOD}/New_Library.kicad_sym")(options "")(descr ""))
+  (lib (name "esp32-dip")(type "KiCad")(uri "C:/Users/devya/Downloads/esp32-dip.kicad_sym")(options "")(descr ""))
+  (lib (name "DC-DC converter")(type "KiCad")(uri "${KIPRJMOD}/DC-DC converter.kicad_sym")(options "")(descr ""))
+)
